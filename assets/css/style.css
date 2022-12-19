@@ -7,28 +7,42 @@ li, p {
     margin-top: 10px;
 }
 
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .container {
     width: 100%;
     max-width: 1240px;
     margin: 0 auto;
-    background-color: lightgrey;
-/*    TODO: Make normal BACKGROUND*/
+
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-header {
+.header-wrapper {
     padding: 25px 0;
     display: grid;
-    grid-template-columns: 50% auto;
-    justify-content: center;
+    grid-template-columns: repeat(2, auto);
     border-bottom: 2px solid #000000;
+    justify-content: space-around;
 }
 
 .prof-img {
-    width: 100%;
-    max-width: 350px;
-    height: 100%;
-    max-height: 350px;
+    object-fit: cover;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
+    margin: 0 50px;
 }
 
 .name {
@@ -38,33 +52,73 @@ header {
 }
 
 .inf {
-    padding-top: 15px;
-    display: grid;
-    grid-template-columns: 50%;
-    justify-content: end;
+    padding-top: 35px;
 }
 
-.contact {
+.info {
+    margin-left: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-evenly;
+}
+
+.footer-wrapper {
     padding: 25px 0;
     display: grid;
-    grid-template-columns: 50% auto;
+    grid-template-columns: repeat(2, auto);
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .citi {
     margin-top: 15px;
     display: grid;
-    grid-template-columns: 5% auto;
+    grid-template-columns: repeat(2, auto);
 }
 
 .phone {
     margin-top: 15px;
     display: grid;
-    grid-template-columns: 5% auto;
+    grid-template-columns: repeat(2, auto);
 }
 
 .links {
     display: grid;
-    grid-template-columns: 50% 50% 50%;
+    grid-template-columns: repeat(3, auto);
+    padding: 25px 0 25px 0;
 }
+
+.links div {
+    margin: 0 5px;
+}
+
+.custom-ul li:nth-child(1) {
+    line-height: 1.5em;
+}
+
+@media all and (max-width: 920px) {
+    .info {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+    .header-wrapper {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+    .prof-img {
+        width: 200px;
+        height: 200px;
+    }
+
+}
+
+@media all and (max-width: 340px) {
+    .footer-wrapper {
+        margin: 0 23px;
+        grid-template-columns: auto;
+        display: grid;
+        justify-content:start;
+    }
+
+}
+
